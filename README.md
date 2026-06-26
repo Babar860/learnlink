@@ -60,3 +60,49 @@ learnlink/
 
 Each service repository includes its own README with service-specific run commands.
 
+## Deployment URLs
+
+- Frontend: https://learnlink-frontend-kappa.vercel.app
+- Production gateway: set `NEXT_PUBLIC_GATEWAY_URL` after the public backend URL is deployed.
+
+## Required Environment
+
+Core runtime:
+
+- `DATABASE_URL`
+- `JWT_SECRET`
+- `GATEWAY_PORT`
+- `COMMUNITY_PORT`
+- `COURSES_PORT`
+- `JOBS_PORT`
+- `AGENTS_PORT`
+- `ADMIN_EMAIL`
+- `ADMIN_PASSWORD`
+- `ADMIN_NAME`
+- `NEXT_PUBLIC_GATEWAY_URL`
+
+AI and cloud integrations:
+
+- `GEMINI_API_KEY`
+- `GOOGLE_CLOUD_PROJECT`
+- `GOOGLE_CLOUD_PROJECT_NUMBER`
+- `GOOGLE_CLOUD_PROJECT_NAME`
+- `FIREBASE_PROJECT_ID`
+- `FIREBASE_WEB_PUSH_KEY`
+- `FCM_SERVER_KEY`
+
+Messaging and media:
+
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_USER`
+- `SMTP_PASSWORD`
+- `SMTP_FROM`
+- `MUX_TOKEN_ID`
+- `MUX_TOKEN_SECRET`
+
+Payments:
+
+- `STRIPE_SECRET_KEY`
+- `STRIPE_WEBHOOK_SECRET`
+- `STRIPE_CONNECT_CLIENT_ID`
