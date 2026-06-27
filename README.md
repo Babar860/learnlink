@@ -67,6 +67,16 @@ Each service repository includes its own README with service-specific run comman
 
 ## Required Environment
 
+The local workspace already has the credentials you shared for PostgreSQL, JWT, Gemini/Google project metadata, Firebase web push, SMTP/Gmail, and Mux configured in the root `.env`. Do not commit the real `.env` file.
+
+Still needed for full production behavior:
+
+- Google OAuth Web Client ID and Client Secret for the login button.
+- GitHub OAuth App Client ID and Client Secret for the login button.
+- Stripe keys/webhook/connect credentials for paid courses, subscriptions, and payouts.
+- SMS provider credentials for teacher class reminders.
+- Public backend URL after the gateway is deployed, then set it as `NEXT_PUBLIC_GATEWAY_URL` for Vercel.
+
 Core runtime:
 
 - `DATABASE_URL`
