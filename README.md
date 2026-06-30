@@ -4,6 +4,52 @@ LearnLink is an AI-operated education, community, live-class, jobs, and creator-
 
 The platform is split into separate repositories so each service can be developed, deployed, and scaled independently.
 
+## Research Motivation
+
+AI-assisted learning platforms need more than content delivery: they need moderation, personalization, community trust, and agentic workflows that can support students and creators safely. LearnLink explores how a modular education platform can provide a foundation for applied AI research in learning support, content moderation, and autonomous educational agents.
+
+## Research Problem
+
+How can a microservice-based learning platform integrate AI agents, moderation workflows, community features, and course/job services while keeping service boundaries clear enough for experimentation and future research?
+
+## Objectives
+
+- Build an AI-ready education platform with independently runnable services.
+- Separate frontend, gateway, course, job, community, and agent responsibilities.
+- Support moderation-first content workflows for safer community interaction.
+- Provide a cloud-ready architecture for future AI agent experiments.
+- Keep adapters and infrastructure explicit for reproducible local development.
+
+## System Architecture
+
+LearnLink is organized as a microservice platform with a Next.js frontend, API gateway, domain services for courses, jobs, and community, a Python-based agent service, and infrastructure definitions for local development. Service boundaries are designed to support independent experimentation and deployment.
+
+## Experimental Setup
+
+- Local development uses environment-driven configuration and service-specific ports.
+- Community moderation begins with pending content states before visibility.
+- Agent services can be run separately to test AI-assisted workflows.
+- Infrastructure definitions support repeatable local testing across services.
+
+## Future Research
+
+- Evaluate AI-assisted moderation quality and false-positive rates.
+- Add retrieval-augmented tutoring or course recommendation agents.
+- Study learner engagement signals and personalized intervention workflows.
+- Compare single-agent and multi-agent support patterns in educational platforms.
+- Add responsible AI monitoring for moderation and recommendation features.
+
+## Citation
+
+```bibtex
+@software{saeed2026learnlink,
+  author = {Saeed, Babar},
+  title = {LearnLink AI Platform},
+  year = {2026},
+  url = {https://github.com/Babar860/learnlink}
+}
+```
+
 ## Repository Map
 
 | Repository | Purpose |
@@ -20,13 +66,13 @@ The platform is split into separate repositories so each service can be develope
 
 ```text
 learnlink/
-├── learnlink-frontend
-├── learnlink-backend-gateway
-├── learnlink-service-community
-├── learnlink-service-courses
-├── learnlink-service-jobs
-├── learnlink-service-agents
-└── learnlink-infra
+|-- learnlink-frontend
+|-- learnlink-backend-gateway
+|-- learnlink-service-community
+|-- learnlink-service-courses
+|-- learnlink-service-jobs
+|-- learnlink-service-agents
+`-- learnlink-infra
 ```
 
 ## Core Platform Capabilities
@@ -67,15 +113,7 @@ Each service repository includes its own README with service-specific run comman
 
 ## Required Environment
 
-The local workspace already has the credentials you shared for PostgreSQL, JWT, Gemini/Google project metadata, Firebase web push, SMTP/Gmail, and Mux configured in the root `.env`. Do not commit the real `.env` file.
-
-Still needed for full production behavior:
-
-- Google OAuth Web Client ID and Client Secret for the login button.
-- GitHub OAuth App Client ID and Client Secret for the login button.
-- Stripe keys/webhook/connect credentials for paid courses, subscriptions, and payouts.
-- SMS provider credentials for teacher class reminders.
-- Public backend URL after the gateway is deployed, then set it as `NEXT_PUBLIC_GATEWAY_URL` for Vercel.
+Do not commit real `.env` files. Production setup requires provider credentials for PostgreSQL, JWT, Gemini/Google Cloud, Firebase, SMTP, media hosting, OAuth, and Stripe.
 
 Core runtime:
 
@@ -90,29 +128,3 @@ Core runtime:
 - `ADMIN_PASSWORD`
 - `ADMIN_NAME`
 - `NEXT_PUBLIC_GATEWAY_URL`
-
-AI and cloud integrations:
-
-- `GEMINI_API_KEY`
-- `GOOGLE_CLOUD_PROJECT`
-- `GOOGLE_CLOUD_PROJECT_NUMBER`
-- `GOOGLE_CLOUD_PROJECT_NAME`
-- `FIREBASE_PROJECT_ID`
-- `FIREBASE_WEB_PUSH_KEY`
-- `FCM_SERVER_KEY`
-
-Messaging and media:
-
-- `SMTP_HOST`
-- `SMTP_PORT`
-- `SMTP_USER`
-- `SMTP_PASSWORD`
-- `SMTP_FROM`
-- `MUX_TOKEN_ID`
-- `MUX_TOKEN_SECRET`
-
-Payments:
-
-- `STRIPE_SECRET_KEY`
-- `STRIPE_WEBHOOK_SECRET`
-- `STRIPE_CONNECT_CLIENT_ID`
