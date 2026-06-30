@@ -20,6 +20,14 @@ How can a microservice-based learning platform integrate AI agents, moderation w
 - Provide a cloud-ready architecture for future AI agent experiments.
 - Keep adapters and infrastructure explicit for reproducible local development.
 
+## Project Contribution
+
+LearnLink contributes a practical reference architecture for AI-assisted education systems. It connects social learning, course discovery, live classes, jobs, creator channels, moderation, and agent services in one platform so future research can test AI behavior inside realistic product workflows rather than isolated demos.
+
+## Research Relevance
+
+This project is relevant to supervisors interested in AI for education, responsible platform moderation, agentic workflow orchestration, and intelligent learning support. The strongest research angle is studying how AI agents can personalize learning, moderate community content, and support platform operations while preserving oversight and service-level accountability.
+
 ## System Architecture
 
 LearnLink is organized as a microservice platform with a Next.js frontend, API gateway, domain services for courses, jobs, and community, a Python-based agent service, and infrastructure definitions for local development. Service boundaries are designed to support independent experimentation and deployment.
